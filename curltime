@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for i in {1..10}; \
 do curl -svo /dev/null --user-agent "Mozilla/5.0" -H "host: $1" $2 \
 -w 'HTTP Status:\t\t%{http_code} \nTime to Connect:\t%{time_connect} \nNS lookup time:\t\t%{time_namelookup} \nPretransfer Time:\t%{time_pretransfer} \nTTFB:\t\t\t%{time_starttransfer} \nTotal:\t\t\t%{time_total} \n\n\n' 2>&1 | \
