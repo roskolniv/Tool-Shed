@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for i in {1..10}; do curl -svo /dev/null -H "host: $1" $2 \
+for i in {1..10}; do curl -4444svo /dev/null -H "host: $1" $2 \
 -w 'HTTP Status:\t\t%{http_code} \nTime to Connect:\t%{time_connect} \nNS lookup time:\t\t%{time_namelookup} \nPretransfer Time:\t%{time_pretransfer} \nTTFB:\t\t\t%{time_starttransfer} \nTotal:\t\t\t%{time_total} \n\n\n' 2>&1 | \
 egrep -i "Cf-|HTTP Status|NS Lookup Time|TTFB|Time to|Total"; done;
