@@ -7,7 +7,7 @@ echo "Analyzing Apache log file......."
 echo "----VISITOR-IPs----"
 
 #Parses Apache Logs in 'combined log format' and sorts the "$remote_addr" field and lists by frequency
-cut -d ' ' -f1 $1 | sort -n | uniq -c | sort -r | head
+cut -d '' -f1 $1 | sort -n | uniq -c | sort -r | head
 
 echo "----USER-AGENTS----"
 
