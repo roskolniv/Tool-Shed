@@ -1,5 +1,5 @@
 #!/bin/bash
 
-while true; do curl -4svo /dev/null -H "Host: $1" $2 \
+while true; do curl -svo /dev/null -H "Host: $1" $2 \
 -kw 'HTTP Status:\t\t%{http_code} \nTime to Connect:\t%{time_connect} \nNS lookup time:\t\t%{time_namelookup} \nPretransfer Time:\t%{time_pretransfer} \nTTFB:\t\t\t%{time_starttransfer} \nTotal:\t\t\t%{time_total} \n\n\n' 2>&1 | \
-egrep -i "Cf-|Date|HTTP Status|NS Lookup Time|TTFB|Time to|Total"; done; > curlloop.txt
+egrep -i "Cf-|Date|HTTP Status|NS Lookup Time|TTFB|Time to|Total"; done;
